@@ -25,6 +25,9 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <property name="inputMethodHints">
    <set>Qt::ImhDigitsOnly</set>
   </property>
@@ -76,6 +79,20 @@
 	background-color: rgb(0, 170, 127);
 	border: 4px solid black;
 	border-radius: 10px;
+}
+
+QPushButton:hover
+{
+	color: rgb(255, 255, 255);
+	background-color: rgb(30, 200, 157);
+	border: 3px solid black;
+}
+
+QPushButton:pressed
+{
+	color: rgb(225, 225, 225);
+	background-color: rgb(0, 140, 97);
+	border: 5px solid black;
 }</string>
    </property>
    <property name="text">
@@ -105,6 +122,20 @@
 	background-color: rgb(170, 0, 127);
 	border: 4px solid black;
 	border-radius: 10px;
+}
+
+QPushButton:hover
+{
+	color: rgb(255, 183, 30);
+	background-color: rgb(200, 30, 157);
+	border: 3px solid black;
+}
+
+QPushButton:pressed
+{
+	color: rgb(200, 123, 0);
+	background-color: rgb(140, 0, 97);
+	border: 5px solid black;
 }</string>
    </property>
    <property name="text">
@@ -167,6 +198,19 @@
      <pointsize>16</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">QTextEdit
+{
+	border: 5px solid rgb(0, 0, 0);
+	border-radius: 10px
+}
+
+QTextEdit::focus
+{
+	border: 5px solid rgb(0, 170, 255);
+	border-radius: 10px
+}</string>
+   </property>
    <property name="inputMethodHints">
     <set>Qt::ImhNone</set>
    </property>
@@ -194,6 +238,19 @@ p, li { white-space: pre-wrap; }
     <font>
      <pointsize>16</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QTextEdit
+{
+	border: 5px solid rgb(0, 0, 0);
+	border-radius: 10px
+}
+
+QTextEdit::focus
+{
+	border: 5px solid rgb(0, 170, 255);
+	border-radius: 10px
+}</string>
    </property>
    <property name="inputMethodHints">
     <set>Qt::ImhNone</set>
@@ -223,6 +280,19 @@ p, li { white-space: pre-wrap; }
      <pointsize>16</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">QTextEdit
+{
+	border: 5px solid rgb(0, 0, 0);
+	border-radius: 10px
+}
+
+QTextEdit::focus
+{
+	border: 5px solid rgb(0, 170, 255);
+	border-radius: 10px
+}</string>
+   </property>
    <property name="inputMethodHints">
     <set>Qt::ImhNone</set>
    </property>
@@ -250,6 +320,14 @@ p, li { white-space: pre-wrap; }
     <font>
      <pointsize>16</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QTextEdit
+{
+	border: 5px solid rgb(0, 0, 0);
+	border-radius: 10px
+}
+</string>
    </property>
    <property name="inputMethodHints">
     <set>Qt::ImhNone</set>

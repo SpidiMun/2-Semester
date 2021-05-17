@@ -16,13 +16,6 @@ public:
     ~AddWindow();
 
 private slots:
-    // Проверка изменения текста
-
-    /*
-    void setEndNodeText();
-    void setNormalLengthText();
-    void setReverseLengthText();
-    */
     // Реализация кнопок
 
     void AddRoad();

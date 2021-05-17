@@ -4,9 +4,9 @@
 #include <QFile>
 #include <QTextStream>
 
-QFile ASize("C:/QtRepos/ShitGraph/MatrixSize.txt");
+QFile ASize("C:/QtRepos/TravellerSalesMan/MatrixSize.txt");
 QTextStream AstreamSize(&ASize);
-QFile AMatrix("C:/QtRepos/ShitGraph/Matrix.txt");
+QFile AMatrix("C:/QtRepos/TravellerSalesMan/Matrix.txt");
 QTextStream AstreamMatrix(&AMatrix);
 
 int Alen;       // Add len
@@ -42,61 +42,10 @@ AddWindow::AddWindow(QWidget *parent) :
 
     ui->startNode->setText(QString::number(Alen));   // Новая вершина - количество узлов
 
-    /*
-    connect(ui->endNode, &QTextEdit::textChanged, this, &AddWindow::setEndNodeText);
-    connect(ui->normalLength, &QTextEdit::textChanged, this, &AddWindow::setNormalLengthText);
-    connect(ui->reverseLength, &QTextEdit::textChanged, this, &AddWindow::setReverseLengthText);
-    */
     connect(ui->btnAddRoad, &QPushButton::clicked, this, &AddWindow::AddRoad);
     connect(ui->btnAdd, &QPushButton::clicked, this, &AddWindow::AddNode);
 }
 
-/*
-void AddWindow::setStartNodeText()
-{
-    QString row = ui->startNode->toPlainText();
-    bool isDigit;
-    if (row.toInt(&isDigit, 10) && (row.toInt(&isDigit, 10) >= Alen ||row.toInt(&isDigit, 10) < 0))
-    {
-        row.chop(1);
-    }
-    ui->startNode->setText(row);
-}
-*/
-/*
-void AddWindow::setEndNodeText()
-{
-    QString row = ui->endNode->toPlainText();
-    bool isDigit;
-    if (row.toInt(&isDigit, 10) && (row.toInt(&isDigit, 10) > Alen - 1 || row.toInt(&isDigit, 10) < 0))
-    {
-        row.chop(1);
-    }
-    ui->normalLength->setText(row);
-}
-
-void AddWindow::setNormalLengthText()
-{
-    QString row = ui->normalLength->toPlainText();
-    bool isDigit;
-    if (row.toInt(&isDigit, 10) && (row.toInt(&isDigit, 10) > 10000 ||row.toInt(&isDigit, 10) < 0))
-    {
-        row.chop(1);
-    }
-    ui->normalLength->setText(row);
-}
-
-void AddWindow::setReverseLengthText()
-{
-    QString row = ui->reverseLength->toPlainText();
-    bool isDigit;
-    if (row.toInt(&isDigit, 10) && (row.toInt(&isDigit, 10) > 10000 ||row.toInt(&isDigit, 10) < 0))
-    {
-        row.chop(1);
-    }
-    ui->reverseLength->setText(row);
-}
-*/
 void AddWindow::AddRoad()
 {
     bool isWritten;

@@ -16,13 +16,6 @@ public:
     ~EditWindow();
 
 private slots:
-    // Проверка изменения текста
-    /*
-    void setStartNodeText();
-    void setEndNodeText();
-    void setNormalLengthText();
-    void setReverseLengthText();
-    */
     // Реализация кнопок
 
     void EditRoad();

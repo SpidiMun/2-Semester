@@ -4,9 +4,9 @@
 #include <QFile>
 #include <QTextStream>
 
-QFile ESize("C:/QtRepos/ShitGraph/MatrixSize.txt");
+QFile ESize("C:/QtRepos/TravellerSalesMan/MatrixSize.txt");
 QTextStream EstreamSize(&ESize);
-QFile EMatrix("C:/QtRepos/ShitGraph/Matrix.txt");
+QFile EMatrix("C:/QtRepos/TravellerSalesMan/Matrix.txt");
 QTextStream EstreamMatrix(&EMatrix);
 
 int Elen;       // Len
@@ -32,6 +32,14 @@ EditWindow::EditWindow(QWidget *parent) :
         ematrix[i] = new int [Elen];
     }
 
+    for (int i = 0; i < Elen; i++)
+    {
+        for (int j = 0; j < Elen; j++)
+        {
+            ematrix[i][j] = 0;
+        }
+    }
+
     EMatrix.close();
     EMatrix.open(QFile::ReadOnly | QFile::Text);
     for (int i = 0; i < Elen; i++)
@@ -43,96 +51,11 @@ EditWindow::EditWindow(QWidget *parent) :
     }
     EMatrix.flush();
     EMatrix.close();
-    /*
-    for (int i = 0; i < Elen; i++)
-    {
-        for (int j = 0; j < Elen; j++)
-        {
-            Ematrix[i][j] = 0;
-        }
-    }
-    */
-    /*
-    connect(ui->startNode, &QTextEdit::textChanged, this, &EditWindow::setStartNodeText);
-    connect(ui->endNode, &QTextEdit::textChanged, this, &EditWindow::setEndNodeText);
-    connect(ui->normalLength, &QTextEdit::textChanged, this, &EditWindow::setNormalLengthText);
-    connect(ui->reverseLength, &QTextEdit::textChanged, this, &EditWindow::setReverseLengthText);
-    */
+
     connect(ui->btnEditRoad, &QPushButton::clicked, this, &EditWindow::EditRoad);
     connect(ui->btnEdit, &QPushButton::clicked, this, &EditWindow::EditNode);
 }
-/*
-void EditWindow::setStartNodeText()
-{
-    QString row = ui->startNode->toPlainText();
-    bool isDigit;
-    if (row.toInt(&isDigit, 10) && (row.toInt(&isDigit, 10) > Elen ||row.toInt(&isDigit, 10) < 0))
-    {
-        row.chop(1);
-    }
-    ui->startNode->setText(row);
-    bool isDigit;
-    if (ui->endNode->toPlainText().toInt(&isDigit, 10) && ui->startNode->toPlainText().toInt(&isDigit, 10))
-    {
-        if (ui->startNode->toPlainText() == ui->endNode->toPlainText())
-        {
-            ui->normalLength->setText("0");
-            ui->reverseLength->setText("0");
-        }
-        else
-        {
-            ui->normalLength->setText(QString::number(ematrix[ui->startNode->toPlainText().toInt(0, 10)][ui->endNode->toPlainText().toInt(0, 10)]);
-            ui->reverseLength->setText(QString::number(ematrix[ui->endNode->toPlainText().toInt(0, 10)][ui->startNode->toPlainText().toInt(0, 10)]);
-        }
-    }
-}
 
-void EditWindow::setEndNodeText()
-{
-    QString row = ui->endNode->toPlainText();
-    bool isDigit;
-    if (row.toInt(&isDigit, 10) && (row.toInt(&isDigit, 10) > Elen || row.toInt(&isDigit, 10) < 0))
-    {
-        row.chop(1);
-    }
-    ui->normalLength->setText(row);
-    if (ui->endNode->toPlainText().toInt(&isDigit, 10) && ui->startNode->toPlainText().toInt(&isDigit, 10))
-    {
-        if (ui->startNode->toPlainText() == ui->endNode->toPlainText())
-        {
-            ui->normalLength->setText("0");
-            ui->reverseLength->setText("0");
-        }
-        else
-        {
-            ui->normalLength->setText(QString::number(ematrix[ui->startNode->toPlainText().toInt(0, 10)][ui->endNode->toPlainText().toInt(0, 10)]);
-            ui->reverseLength->setText(QString::number(ematrix[ui->endNode->toPlainText().toInt(0, 10)][ui->startNode->toPlainText().toInt(0, 10)]);
-        }
-    }
-}
-
-void EditWindow::setNormalLengthText()
-{
-    QString row = ui->normalLength->toPlainText();
-    bool isDigit;
-    if (row.toInt(&isDigit, 10) && (row.toInt(&isDigit, 10) > 10000 ||row.toInt(&isDigit, 10) < 0))
-    {
-        row.chop(1);
-    }
-    ui->normalLength->setText(row);
-}
-
-void EditWindow::setReverseLengthText()
-{
-    QString row = ui->reverseLength->toPlainText();
-    bool isDigit;
-    if (row.toInt(&isDigit, 10) && (row.toInt(&isDigit, 10) > 10000 ||row.toInt(&isDigit, 10) < 0))
-    {
-        row.chop(1);
-    }
-    ui->reverseLength->setText(row);
-}
-*/
 void EditWindow::EditRoad()
 {
     bool isWritten;

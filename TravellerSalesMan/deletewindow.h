@@ -16,9 +16,7 @@ public:
     ~DeleteWindow();
 
 private slots:
-    // Проверка изменения текста
-
-    //void set
+    // Реализация кнопок
 
     void DeleteNode();
 
